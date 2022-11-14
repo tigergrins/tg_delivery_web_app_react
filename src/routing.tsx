@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
-import Menu from './pages/Menu/index'
+import Menu from './pages/Menu/Menu'
 
 
 function MainRouter() {
