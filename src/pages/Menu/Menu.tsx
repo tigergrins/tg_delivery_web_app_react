@@ -52,6 +52,7 @@ const Title = styled.div`
 const Category = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   margin-bottom: 1.5rem;
 `
