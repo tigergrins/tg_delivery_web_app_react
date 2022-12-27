@@ -5,26 +5,31 @@ import { dishes } from '../../store/content'
 import Dish from './Dish'
 
 function Menu() {
+  const tabs = dishes.map(item => ({category: item.category, title: item.categoryTitle}))
+
   return (
     <Container>
-      <Slider />
+      <Header>
+        <ImgContainer></ImgContainer>
+        <Slider tabs={tabs}/>
+      </Header>
 
       <Categories>
         {
-          dishes.map(category => {
+          dishes.map((category, index) => {
             return (
-              <>
+              <React.Fragment key={`category_${index}`}>
                 <Title>{category.categoryTitle}</Title>
                 <Category>
                   {
-                    category.dishes.map(dish => {
+                    category.dishes.map((dish, index) => {
                       return (
-                        <Dish data={dish}/>
+                        <Dish key={`dish_${index}`} data={dish}/>
                       )
                     })
                   }
                 </Category>
-              </>
+              </React.Fragment>
             )
           })
         }
@@ -37,11 +42,35 @@ function Menu() {
 export default Menu
 
 const Container = styled.div`
+`
 
+const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background: var(--blackout);
+  padding: 1.5rem 0;
+`
+
+const ImgContainer = styled.div`
+  background-color: var(--color-red);
+  width: 4rem;
+  height: 4rem;
+
+  img {
+
+    width: 4rem;
+    height: 4rem;
+  }
 `
 
 const Categories = styled.div`
-
+  margin-top: 14rem;
 `
 
 const Title = styled.div`

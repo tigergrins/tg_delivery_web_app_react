@@ -1,10 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ITab } from './Slider'
 
-function SliderItem() {
+interface ISliderItemProps {
+  tab: ITab
+}
+
+function SliderItem(props: ISliderItemProps) {
   return (
     <Container>
-      SliderItem
+      <span>{props.tab.title}</span>
     </Container>
   )
 }
@@ -12,5 +17,12 @@ function SliderItem() {
 export default SliderItem
 
 const Container = styled.div`
+  display: flex;
+  justify-content: end;
 
+  min-width: 5rem;
+  min-height: 5rem;
+  background-color: var(--color-red);
+  margin: 0 0.5rem;
+  text-align: center;
 `
