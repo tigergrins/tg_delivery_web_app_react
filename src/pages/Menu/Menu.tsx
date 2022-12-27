@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Logo } from '../../assets/icons'
 import Slider from '../../components/Slider/Slider'
 import { dishes } from '../../store/content'
 import Dish from './Dish'
@@ -10,7 +11,7 @@ function Menu() {
   return (
     <Container>
       <Header>
-        <ImgContainer></ImgContainer>
+        <Logo/>
         <Slider tabs={tabs}/>
       </Header>
 
@@ -55,17 +56,9 @@ const Header = styled.div`
   width: 100%;
   background: var(--blackout);
   padding: 1.5rem 0;
-`
 
-const ImgContainer = styled.div`
-  background-color: var(--color-red);
-  width: 4rem;
-  height: 4rem;
-
-  img {
-
-    width: 4rem;
-    height: 4rem;
+  svg {
+    margin-bottom: 1rem;
   }
 `
 
