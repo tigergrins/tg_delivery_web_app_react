@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Logo } from '../../assets/icons'
 import Slider from '../../components/Slider/Slider'
 import { dishes } from '../../store/content'
-import Dish from './Dish'
+import MenuItem from './MenuItem'
 
 function Menu() {
   const tabs = dishes.map(item => ({category: item.category, title: item.categoryTitle}))
@@ -25,7 +25,7 @@ function Menu() {
                   {
                     category.dishes.map((dish, index) => {
                       return (
-                        <Dish key={`dish_${index}`} data={dish}/>
+                        <MenuItem key={`dish_${index}`} data={dish}/>
                       )
                     })
                   }

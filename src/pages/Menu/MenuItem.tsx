@@ -7,10 +7,10 @@ interface IDishProps {
   data: IDish
 }
 
-function Dish(props: IDishProps) {
+export default React.memo(function MenuItem(props: IDishProps) {
   return (
     <Container>
-      <ImgContainer><img src={props.data.img} alt="photo" /></ImgContainer>
+      <ImgContainer><img src={''} alt="photo" /></ImgContainer>
 
       <div className={'title'}>{props.data.dishTitle}</div>
       <div className={'weight'}>{props.data.weight} g.</div>
@@ -18,9 +18,7 @@ function Dish(props: IDishProps) {
       <CustomButton onClick={() => {}}>+ {props.data.price}</CustomButton>
     </Container>
   )
-}
-
-export default Dish
+})
 
 const Container = styled.div`
   position: relative;
