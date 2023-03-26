@@ -7,8 +7,13 @@ interface ISliderItemProps {
 }
 
 function SliderItem(props: ISliderItemProps) {
+  const moveToCategory = () => {
+    const category = document.getElementById(props.tab.category)
+    category && category.scrollIntoView({ behavior: "smooth" })
+  }
+
   return (
-    <Container>
+    <Container onClick={moveToCategory}>
       <span>{props.tab.title}</span>
     </Container>
   )

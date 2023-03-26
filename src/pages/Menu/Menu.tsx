@@ -21,7 +21,7 @@ function Menu() {
             return (
               <React.Fragment key={`category_${index}`}>
                 <Title>{category.categoryTitle}</Title>
-                <Category>
+                <Category id={category.category}>
                   {
                     category.dishes.map((dish, index) => {
                       return (
@@ -43,6 +43,7 @@ function Menu() {
 export default Menu
 
 const Container = styled.div`
+  padding-bottom: 5rem;
 `
 
 const Header = styled.div`
@@ -77,4 +78,5 @@ const Category = styled.div`
   flex-wrap: wrap;
 
   margin-bottom: 1.5rem;
+  scroll-margin-top: 15rem;
 `
